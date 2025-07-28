@@ -1,0 +1,42 @@
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fee;
+  border: 1px solid #fcc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.title {
+  color: #c00;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.message {
+  color: #600;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.retryButton {
+  background-color: #c00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.retryButton:hover {
+  background-color: #a00;
+}
+
+.retryButton:active {
+  background-color: #900;
+}
