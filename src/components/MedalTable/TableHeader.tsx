@@ -24,7 +24,7 @@ const TableHeader = ({ currentSort, onSortChange }: TableHeaderProps) => {
     <thead className={styles.header}>
       <tr>
         <th className={styles.rankCell}>
-          <span className="sr-only">Rank</span>#
+          <span className="sr-only">Rank</span>
         </th>
         <th className={styles.countryCell}>Country</th>
         {columns.map(({ key, label, ariaLabel }) => {
@@ -45,6 +45,7 @@ const TableHeader = ({ currentSort, onSortChange }: TableHeaderProps) => {
                 aria-pressed={isActive}
                 onClick={() => onSortChange(key)}
               >
+                {/* show colored dots for medals, text for total */}
                 {!isTotal ? (
                   <span
                     className={`${styles.dot} ${dotStyles[key]}`}
@@ -54,6 +55,7 @@ const TableHeader = ({ currentSort, onSortChange }: TableHeaderProps) => {
                   <span>{label}</span>
                 )}
 
+                {/* sort indicator arrow */}
                 {isActive && (
                   <span className={styles.arrow} aria-hidden="true">
                     ▼
