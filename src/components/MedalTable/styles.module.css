@@ -1,0 +1,160 @@
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+/* header styles */
+.header {
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #ddd;
+}
+
+.header th {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable:hover {
+  background-color: #e8e8e8;
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+.active {
+  background-color: #e0e0e0;
+}
+
+.active .sortButton {
+  color: #1976d2;
+  font-weight: 700;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #1976d2;
+}
+
+/* dots */
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.goldDot {
+  background-color: #ffb700;
+}
+
+.silverDot {
+  background-color: #8a8a8a;
+}
+
+.bronzeDot {
+  background-color: #cd7f32;
+}
+
+/* cell styles */
+.rankCell {
+  width: 50px;
+  text-align: center;
+  font-weight: 600;
+  color: #666;
+}
+
+.countryCell {
+  min-width: 200px;
+  padding: 12px;
+}
+
+.countryContent {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.countryName {
+  font-weight: 500;
+  color: #333;
+}
+
+.medalCell {
+  width: 80px;
+  text-align: center;
+  font-weight: 600;
+  padding: 12px;
+}
+
+/* medal colors */
+.gold {
+  color: #ffb700;
+}
+
+.silver {
+  color: #8a8a8a;
+}
+
+.bronze {
+  color: #cd7f32;
+}
+
+.total {
+  color: #333;
+  font-weight: 700;
+}
+
+/* row styles */
+.row {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.row:hover {
+  background-color: #f9f9f9;
+}
+
+.row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.row:nth-child(even):hover {
+  background-color: #f5f5f5;
+}
+
+/* no data */
+.noData {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 18px;
+}
