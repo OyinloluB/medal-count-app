@@ -4,14 +4,21 @@ A React/Next.js application that displays Olympic medal counts with sorting func
 
 ## Features
 
-- Display top 10 countries by 
-medal count
-- Sort by gold, silver, bronze, or total medals
-- URL parameter support for sorting (`?sort=gold|silver|bronze|total`)
-- Tiebreaker logic implemented according to specifications
-- Country flags displayed using sprite sheet
-- Error handling for failed data fetching
-- Responsive design
+- Display top 10 countries by medal count
+- Sort by gold, silver, bronze, or total medals via URL parameter (`?sort=gold|silver|bronze|total`)
+- Default sort by gold medals when no parameter provided
+- Tiebreaker logic:
+  - Total medals: ties broken by most gold
+  - Gold medals: ties broken by most silver
+  - Silver medals: ties broken by most gold
+  - Bronze medals: ties broken by most gold
+- Clickable column headers for re-sorting
+- Data fetched once (no re-fetching on sort changes)
+- Country flags rendered using provided sprite sheet (flags.png)
+- Dynamic loading of medals.json with error handling
+- Responsive design following provided design
+- Built with TypeScript, React, and Next.js
+- Full accessibility support (ARIA labels, keyboard navigation)
 
 ## Setup Instructions
 

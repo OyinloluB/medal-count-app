@@ -23,10 +23,12 @@ const TableHeader = ({ currentSort, onSortChange }: TableHeaderProps) => {
   return (
     <thead className={styles.header}>
       <tr>
-        <th className={styles.rankCell}>
+        <th className={styles.rankCell} scope="col">
           <span className="sr-only">Rank</span>#
         </th>
-        <th className={styles.countryCell}>Country</th>
+        <th className={styles.countryCell} scope="col">
+          Country
+        </th>
         {columns.map(({ key, label, ariaLabel }) => {
           const isActive = currentSort === key;
           const isTotal = key === "total";
@@ -34,6 +36,7 @@ const TableHeader = ({ currentSort, onSortChange }: TableHeaderProps) => {
           return (
             <th
               key={key}
+              scope="col"
               className={`${styles.medalCell} ${styles.sortable} ${
                 isActive ? styles.active : ""
               }`}

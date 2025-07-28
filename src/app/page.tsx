@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <h1 className={styles.title}>Olympic Medal Count</h1>
+        <h1 className={styles.title}>Medal Count</h1>
         <MedalTable
           medals={sortedMedals}
           sortBy={sortBy}
