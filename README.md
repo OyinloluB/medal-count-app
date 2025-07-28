@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Medal Count Mini App
 
-## Getting Started
+A React/Next.js application that displays Olympic medal counts with sorting functionality.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Display top 10 countries by 
+medal count
+- Sort by gold, silver, bronze, or total medals
+- URL parameter support for sorting (`?sort=gold|silver|bronze|total`)
+- Tiebreaker logic implemented according to specifications
+- Country flags displayed using sprite sheet
+- Error handling for failed data fetching
+- Responsive design
+
+## Setup Instructions
+
+1. Install dependencies:
 ```
+npm install
+```
+2. Run the development server:
+```
+npm run dev
+```
+3. Open http://localhost:3000 in your browser
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
+- src/
+    - app/                  
+        - page.tsx         
+        - layout.tsx       
+    - components/          
+        - MedalTable/: Table display logic
+        - CountryFlag/: Sprite-based flag rendering
+        - ErrorMessage/: Error state handling
+    - hooks/               
+        - useMedalData.ts: Data fetching and caching
+        - useURLParams.ts: URL parameter management
+    - services/            
+        - api.ts: Medal data fetching
+    - utils/              
+        - types.ts: TypeScript type definitions
+        - sorting.ts: Sorting and tiebreaker logic
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technical Decisions
+- Next.js App Router: For modern React features and better performance
+- TypeScript: For type safety and better developer experience
+- CSS Modules: For scoped styling and avoiding conflicts
+- Custom Hooks: For separation of concerns and reusability
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Potential Improvements
+- Testing (1 day):
+    - Unit tests with Jest and React Testing Library
+    - E2E tests with Playwright
+- Performance (2 hours):
+    - Virtual scrolling for large datasets
+- UX Improvements (2-4 hours):
+    - Smooth sorting animations
+    - Loading skeletons
+    - Search/filter functionality
+    - Export to CSV feature

@@ -31,7 +31,7 @@ export interface TableRowProps {
 
 // country flag props
 export interface CountryFlagProps {
-  code: string;
+  countryCode: string;
 }
 
 // error message props

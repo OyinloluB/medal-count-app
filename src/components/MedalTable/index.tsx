@@ -11,7 +11,10 @@ const MedalTable = ({ medals, sortBy, onSortChange }: MedalTableProps) => {
 
   return (
     <div className={styles.tableContainer}>
-      <table className={styles.table}>
+      <table className={styles.table} aria-label="Olympic medal standings">
+        <caption className="sr-only">
+          Top 10 countries by Olympic medals, sorted by {sortBy}
+        </caption>
         <TableHeader currentSort={sortBy} onSortChange={onSortChange} />
         <tbody>
           {medals.map((medal, index) => (

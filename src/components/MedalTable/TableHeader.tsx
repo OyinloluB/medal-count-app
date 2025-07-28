@@ -24,7 +24,7 @@ const TableHeader = ({ currentSort, onSortChange }: TableHeaderProps) => {
     <thead className={styles.header}>
       <tr>
         <th className={styles.rankCell}>
-          <span className="sr-only">Rank</span>
+          <span className="sr-only">Rank</span>#
         </th>
         <th className={styles.countryCell}>Country</th>
         {columns.map(({ key, label, ariaLabel }) => {

@@ -1,10 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
-
-export interface CountryFlagProps {
-  /** three‑letter ISO country code (e.g. "CAN", "USA") */
-  countryCode: string;
-}
+import { CountryFlagProps } from "@/utils/types";
 
 // sprite dimensions (each flag in the sprite sheet is 28x17 pixels)
 const FLAG_WIDTH = 28;

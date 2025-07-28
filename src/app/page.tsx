@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import MedalTable from "@/components/MedalTable";
 import ErrorMessage from "@/components/ErrorMessage";
 import { useMedalData } from "@/hooks/useMedalData";
@@ -12,10 +12,18 @@ export default function Home() {
   const { medals, loading, error } = useMedalData();
   const { sortBy, setSortBy } = useURLParams();
 
+  const sortedMedals = useMemo(
+    () => sortMedals(medals, sortBy),
+    [medals, sortBy]
+  );
+
   if (loading) {
     return (
       <main className={styles.main}>
-        <div className={styles.loading}>Loading medal data...</div>
+        <div className={styles.loading} role="status" aria-live="polite">
+          <span>Loading medal data...</span>
+          <span className="sr-only">Please wait</span>
+        </div>
       </main>
     );
   }
@@ -27,8 +35,6 @@ export default function Home() {
       </main>
     );
   }
-
-  const sortedMedals = sortMedals(medals, sortBy);
 
   return (
     <main className={styles.main}>
